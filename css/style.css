@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	font-size: 16px;
+}
+
+body{
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	font-family: 'Roboto', sans-serif;
+	min-height: 100vw;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+.header{
+	background-color: #131417;
+	box-shadow: 0px 4px 4px rgba(19, 20, 23, 0.4);
+}
+
+.header__navBar{
+	max-width: 1196px;
+	padding: 0 5px;
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo{
+	padding: 17px 0;
+}
+
+.header__logo__link::before{
+	content: '';
+	padding-top:100%;
+	display: inline-block;
+}
+
+.header__logo__link{
+	font-size: 1.2rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color:#FAFAFA;
+	width: 46px;
+	border: 3px solid #0ff;
+	border-radius: 50%;
+	font-weight: 700;
+}
+
+.header__logo__link span {
+	font-weight: 100;
+}
+
+.header__ul{
+	display: flex;
+	padding: 0 -38px;
+}
+
+.dropdown{
+	padding-right: 10px;
+	position: relative;
+}
+
+.dropdown .header__link,.dropdown__dropdown .dropdown__link{
+	position: relative;
+}
+
+.header__link{
+	margin: 0 38px;
+	color:#FAFAFA;
+	font-weight: 400;
+}
+
+.header__link:hover,.header__link:active{
+	color:#EB5757;
+}
+
+.fas{
+	transform: rotateZ(90deg);
+	color:green;
+}
+
+.header__phone{
+	margin-left: 13px;
+	color:#FAFAFA;
+}
+
+.header__burger{
+	display: none;
+}
+
+.header__burger button{
+	background-color: transparent;
+	outline: none;
+}
+
+.header__burger button span{
+	width: 22px;
+	height: 2px;
+	display: block;
+	margin: 3px;
+	background-color: #F2994A;
+}
+
+.dropdown::after{
+	content: '';
+	display: inline-block;
+	border: 6px solid #F2994A;
+	position: absolute;
+	border-color: #F2994A transparent transparent transparent;
+	right:9px;
+	top: 50%;
+	transition: all 1s ease;
+	transform: translateY(-25%);
+
+}
+
+.dropdown:hover::after{
+	border-color: transparent transparent #F2994A transparent;
+	transform: translateY(-75%);
+
+}
+
+.header__dropdown{
+	padding-right: 22px;
+	position: fixed;
+	min-width: 320px;
+	padding-top: 31px;
+	transition: all 1s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.header__dropdown::before{
+	content: '';
+	border: 20px solid #252830;
+	border-color: transparent transparent #252830 transparent;
+	position: absolute;
+	top: -9px;
+	left: 47px;
+}
+
+.dropdown:hover > .header__dropdown{
+	visibility: visible;
+	opacity: 1;
+}
+
+.dropdown__list{
+	background-color: #252830;
+	padding:8px 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown__list:last-child{
+	border-radius: 0px 0px 8px 8px;
+}
+
+.dropdown__link{
+	color:#FAFAFA;
+	max-width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	transition: all .7s ease;
+}
+
+.dropdown__list:hover{
+	padding: 8px 18px;
+	background-color: #131417;
+}
+
+.dropdown__dropdown{
+	position: relative;
+}
+
+.dropdown__dropdown::after{
+	content: '';
+	display: inline-block;
+	border: 6px solid #F2994A;
+	position: absolute;
+	border-color: #F2994A transparent transparent transparent;
+	right:8px;
+	top: 50%;
+	transition: all 1s ease;
+}
+
+.dropdown__dropdown:hover::after{
+	transform: translateY(-50%);
+	border-color: transparent transparent transparent #F2994A;
+}
+
+.dropdown__dropdown:hover  .header__dropdown__dropdown{
+	visibility: visible;
+	opacity: 1;
+}
+
+.header__dropdown__dropdown{
+	bottom: 0;
+	left: 300px;
+	padding-left: 22px;
+	visibility: hidden;
+	transition: all 1s ease;
+	opacity: 0;
+	position: absolute;
+}
+
+.header__dropdown__dropdown::before{
+	content: '';
+	border: 12px solid #252830;
+	border-color: transparent #252830 transparent transparent;
+	position: absolute;
+	left: -2px;
+	bottom:5px;
+}
+
+.dropdown__dropdown__list{
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	background: #252830;
+	min-width: 200px;
+	padding: 8px 18px;
+}
+
+.dropdown__dropdown__list:nth-child(1){
+	border-radius: 8px 8px 0 0;
+}
+
+.dropdown__dropdown__list:nth-child(2){
+	border-radius:0 0 8px 8px;
+}
+
+.dropdown__dropdown__list:nth-child(1):hover{
+	background-color: #131417;
+	border-radius: 8px 8px 0 0;
+}
+
+.dropdown__dropdown__list:nth-child(2):hover{
+	background-color: #131417;
+	border-radius:0 0 8px 8px;
+}
+
+.dropdown__dropdown__link{
+	color:#fff;
+	max-width: 170px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+@media (max-width:1024px){
+	.header__ul{
+		padding: 0 -19px;
+	}
+
+	.header__link{
+		margin: 0 19px;
+	}
+}
+
+@media (max-width:768px){
+	.header__burger{
+		display: block;
+	}
+
+	.dropdown{
+		padding-right: 0;
+	}
+
+	.header__black{
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		top:80px;
+		left: 0;
+		right: 0;
+		height: 100%;
+	}
+
+	.header__ul{
+		position: absolute;
+		top:81px;
+		background-color: #252830;
+		display: flex;
+		right: 0;
+		height: 100%;
+		overflow-y:scroll;
+		width: 50%;
+		min-width: 320px;
+		flex-direction: column;
+	}
+
+	.header__list,.dropdown__list,.dropdown__dropdown__list{
+		border-top: 1px solid #131417;
+	}
+
+	.header__link,.dropdown__list,.dropdown__dropdown__list{
+		display: inline-block;
+		padding:20px;
+		margin: 0;
+		min-width: 320px;
+		width: 100%;
+	}
+
+	.dropdown::after{
+		content: '';
+		border: 5px solid #F2994A;
+		border-color: #F2994A transparent transparent transparent;
+		left: 45%;
+		right: auto;
+		top: 30px;
+		position: absolute;
+		transition: all 1s ease;
+	}
+
+	.dropdown__dropdown .dropdown__link{
+		padding: 20px;
+		display: inline-block;
+	}
+
+	.dropdown__dropdown .dropdown__link{
+		max-width: 100%;
+		padding-right: 40px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: block;
+		transition: all .7s ease;
+	}
+
+	.dropdown__dropdown::after{
+		content: '';
+		border: 5px solid #F2994A;
+		border-color:#F2994A transparent transparent transparent;
+		right: 3%;
+		top: 27px;
+		position: absolute;
+		transition: all 1s ease;
+	}
+
+	.dropdown__dropdown:hover::after{
+		border: 5px solid #F2994A;
+		border-color: transparent transparent #F2994A transparent;
+	}
+
+	.header__dropdown, .header__dropdown__dropdown{
+		position: relative;
+		display: none;
+		margin: 0;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: 0;
+		visibility: visible;
+	    opacity: 1;
+		background-color: transparent;
+	    border-radius: 0;
+	}
+
+	.dropdown:hover .header__dropdown{
+		display:block;
+	}
+
+	.dropdown:hover .dropdown__dropdown:hover .header__dropdown__dropdown{
+		display: block;
+	}
+
+
+	.dropdown__list:hover,.dropdown__dropdown__list:hover,.dropdown__dropdown:hover,.dropdown__dropdown .dropdown__link:hover,.dropdown__dropdown__list:nth-child(2):hover,.dropdown__dropdown__list:nth-child(1):hover{
+		padding:20px;
+		border-radius: 0;
+		background-color: #131417;
+	}
+
+	.dropdown__dropdown:hover .dropdown__link{
+		padding-right: 40px;
+	}
+
+	.dropdown__list.dropdown__dropdown{
+		padding: 0;
+		background-color: transparent;
+	}
+
+	.dropdown__list:hover.dropdown__dropdown:hover{
+		padding: 0;
+	}
+
+	.dropdown__dropdown__list:nth-child(1){
+		border-radius: 0;
+	}
+
+	.dropdown__dropdown__list:nth-child(2){
+		border-radius:0 ;
+	}
+
+	.dropdown__dropdown__list:nth-child(1):hover{
+		border-radius: 0;
+	}
+
+	.dropdown__dropdown__list:nth-child(2):hover{
+		border-radius:0;
+	}
+
+	.header__dropdown__dropdown::before,.header__dropdown::before{
+		display: none;
+	}
+
+	.header__list:hover,.dropdown__list:hover,.dropdown__dropdown__list:hover{
+		background-color: #131417;
+	}
+}
+
+@media(max-width:400px){
+	.header__phone{
+		display: none;
+	}
+}
